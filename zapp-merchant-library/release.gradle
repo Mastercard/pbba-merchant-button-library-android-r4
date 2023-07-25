@@ -27,7 +27,7 @@ afterEvaluate {
                     name = 'PbBa Merchant Button Library - Android'
                     description = 'The Pay by Bank app Merchant Library for Android makes it easy for you to add Pay by Bank app as a new payment method.'
 
-                    url = 'https://github.com/Mastercard/pbba-merchant-button-library-android'
+                    url = 'https://github.com/Mastercard/pbba-merchant-button-library-android-r4'
                     organization {
                         name = 'Mastercard Zapp'
                         url = 'https://mastercard.com'
@@ -44,9 +44,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        url = 'https://github.com/Mastercard/pbba-merchant-button-library-android'
-                        connection = 'scm:git:git://github.com:Mastercard/pbba-merchant-button-library-android.git'
-                        developerConnection = 'scm:git:ssh://git@github.com:Mastercard/pbba-merchant-button-library-android.git'
+                        url = 'https://github.com/Mastercard/pbba-merchant-button-library-android-r4'
+                        connection = 'scm:git:git://github.com:Mastercard/pbba-merchant-button-library-android-r4'
+                        developerConnection = 'scm:git:ssh://git@github.com:Mastercard/pbba-merchant-button-library-android-r4'
                     }
 
                     withXml {
@@ -69,7 +69,7 @@ afterEvaluate {
             maven {
                 name = "GitHubPackages"
                 /** Configure path of your package repository on Github */
-                url = uri("https://maven.pkg.github.com/Mastercard/merchant-button-lib-test")
+                url = uri("https://maven.pkg.github.com/Mastercard/pbba-merchant-button-library-android-r4")
                 credentials {
                     username = System.getenv("USERNAME")
                     password = System.getenv("TOKEN")
