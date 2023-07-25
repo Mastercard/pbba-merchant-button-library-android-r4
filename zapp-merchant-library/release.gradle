@@ -69,7 +69,7 @@ afterEvaluate {
             maven {
                 name = "GitHubPackages"
                 /** Configure path of your package repository on Github */
-                url = uri("https://maven.pkg.github.com/Mastercard/pbba-merchant-button-library-android-r4")
+                url = uri("https://maven.pkg.github.com/Mastercard/pbba-merchant-button-library-android")
                 credentials {
                     username = System.getenv("USERNAME")
                     password = System.getenv("TOKEN")
