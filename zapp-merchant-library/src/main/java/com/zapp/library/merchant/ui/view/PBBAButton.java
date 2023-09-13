@@ -363,6 +363,7 @@ public class PBBAButton extends RelativeLayout implements LoaderManager.LoaderCa
      */
     private void setPbBaButtonLayout(final List<AvailableBankAppsResponse> list) {
         if (list.size() > 0) {
+            llBankAppLogo.removeAllViewsInLayout();
             for (AvailableBankAppsResponse bank : list) {
                 final ImageView imageView = (ImageView) LayoutInflater.from(getContext()).inflate(R.layout.pbba_button_item_bankapp_icon,
                         null);

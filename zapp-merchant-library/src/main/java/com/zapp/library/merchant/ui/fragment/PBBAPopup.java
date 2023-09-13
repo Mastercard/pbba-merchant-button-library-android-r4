@@ -227,6 +227,7 @@ public abstract class PBBAPopup extends DialogFragment implements LoaderManager.
 
     private void displayLogo(final LinearLayout view, final List<AvailableBankAppsResponse> list) {
         view.setVisibility(View.VISIBLE);
+        view.removeAllViewsInLayout();
         for (final AvailableBankAppsResponse bank : list) {
             final View rootView = LayoutInflater.from(getActivity()).inflate(R.layout.pbba_popup_about_item_app,
                     null);

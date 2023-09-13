@@ -11,6 +11,8 @@ task javadocs(type: Javadoc) {
 
 afterEvaluate {
     javadocs.classpath += files(android.libraryVariants.collect { variant ->
+        //noinspection GroovyUntypedAccess
+        //variant.javaCompile.classpath.files
         variant.javaCompileProvider.get().classpath.files
     })
 
@@ -80,7 +82,7 @@ afterEvaluate {
 }
 
 task javadocsJar(type: Jar, dependsOn: javadocs) {
-    archiveClassifier.set("javadoc")
+    archiveClassifier.set('javadoc')
     from javadocs.destinationDir
 }
 
@@ -100,20 +102,19 @@ uploadArchives {
 }
 
 task zipRelease(type: Zip) {
+    dependsOn uploadArchives
     from localReleaseDest
     destinationDir buildDir
     archiveName "release-${project.PUBLISH_VERSION}.zip"
 }
 
 task generateLibraryRelease {
+    dependsOn zipRelease
     doLast {
         println "Release ${project.PUBLISH_VERSION} can be found at ${localReleaseDest}/"
         println "Release ${project.PUBLISH_VERSION} zipped can be found ${buildDir}/release-${project.PUBLISH_VERSION}.zip"
     }
 }
-
-generateLibraryRelease.dependsOn(uploadArchives)
-generateLibraryRelease.dependsOn(zipRelease)
 
 artifacts {
     archives sourcesJar
