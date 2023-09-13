@@ -78,6 +78,6 @@ afterEvaluate {
 
     signing {
         sign publishing.publications
-        sign configurations.archives
+        //sign configurations.archives
     }
 }
